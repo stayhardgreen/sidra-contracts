@@ -1,0 +1,9 @@
+#!/bin/bash
+
+./compile clean
+./compile
+
+# Python Check web3 is installed
+python3 -c "import web3" 2>/dev/null || pip3 install web3
+
+python3 -c "from generator import generate_genesis; generate_genesis()"
